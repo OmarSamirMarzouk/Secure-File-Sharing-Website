@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9d9d9; /* Light Gray */
+            color: #353535; /* Dark Gray */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #284b63; /* Dark Blue */
+            color: #ffffff; /* White */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+    
+        .button {
+            background-color: #3c6e71; /* Teal */
+            color: #ffffff; /* White */
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #284b63; /* Dark Blue */
+        }
+        .container {
+            text-align: center; /* Center content */
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff; /* White */
+            padding: 20px;
+            width: 300px; /* Smaller width */
+            margin: auto; /* Center the box */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link a {
+            color: #ffffff; /* White text for visibility */
+            background-color: #3c6e71; /* Teal background */
+            padding: 5px 10px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .nav-link a:hover {
+            background-color: #284b63; /* Dark Blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CrypticDrop</h1>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<!-- Upload File Link -->
+<div class="nav-link">
+    <a href="{{ url_for('upload_file') }}" class="button">Upload a File</a>
+</div>
+
+<h2>Dashboard</h2>
+
+<div class="files-container">
+    <!-- Received Files Column -->
+    <div class="files-column">
+        <h3>Received Files</h3>
+        {% if received_files %}
+            {% for file in received_files %}
+            <div>
+                {{ file.file_name }} - from {{ file.sender.username }}
+                <a href="{{ url_for('download_received_file', file_id=file.id) }}">Download</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No files received.</p>
+        {% endif %}
+    </div>
+
+   
+    <!-- Sent Files -->
+{% if sent_files %}
+<h3>Sent Files</h3>
+{% for file in sent_files %}
+<div>
+    {{ file.file_name }} - to {{ file.recipient_username }}
+    <a href="{{ url_for('download_sent_file', file_id=file.id) }}">Download</a>
+</div>
+{% endfor %}
+{% else %}
+<p>No files sent.</p>
+{% endif %}
+
+    
+    {% endblock %}
