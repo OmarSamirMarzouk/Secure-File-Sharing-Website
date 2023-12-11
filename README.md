@@ -15,7 +15,7 @@ Clone the Repository
 
 bash
 Copy code
-git clone https://github.com/your-username/your-repository.git
+git clone [https://github.com/your-username/your-repository.git](https://github.com/samiirspot/Secure-File-Sharing-Website.git)
 cd your-repository
 Set Up a Virtual Environment (Optional but recommended)
 
